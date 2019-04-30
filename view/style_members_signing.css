@@ -1,0 +1,86 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+#content{
+	width: 50%;
+	min-width: 400px;
+	margin: auto;
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	color: white;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+}
+#mainContent{
+	padding:50px;
+	flex:2;
+	background-color: #3498db;
+	max-width: 400px;
+	
+}
+
+#mainContent form{
+}
+
+#mainContent form *{
+	margin-top: 10px;
+}
+
+#mainContent form input[type="text"], #mainContent form input[type="password"], #mainContent form input[type="email"]{
+	height: 30px;
+	border:none;
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+	/*margin-left: 20px;
+	/*margin-right: 20px;*/
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#mainContent form input[type="submit"]
+{
+	border:none;
+	height: 40px;
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+	padding: 10px;
+	border-radius: 5px;
+	/*width: 100%;*/
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+
+#mainContent form input[type="checkbox"]
+{
+	margin-right: 10px;
+}
+
+aside{
+	padding:50px;
+	flex:1;
+	/*margin-top: 50px;*/
+	margin-bottom: 50px;
+	background-color: #3d4a51;
+}
+
+aside h2{
+	margin-bottom: 20px;
+	/*margin: 60px;*/
+}
+
+aside a:link, aside a:visited{
+	text-decoration: none;
+	background-color: #3498db;
+	color: white;
+	padding: 10px;
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+	border-radius: 5px;
+	/*margin: 60px;*/
+}
+
+aside a:hover{
+	background-color: white;
+	color:#3d4a51;
+	/*margin: 60px;*/
+}

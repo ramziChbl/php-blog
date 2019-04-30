@@ -1,0 +1,11 @@
+table *{
+	/*border: solid;*/
+}
+
+td
+{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 500px;
+}

@@ -1,0 +1,198 @@
+/* GENERAL */
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	/*height: 100%;
+	/*width: 100%;*/
+	font-family:"trebuchet ms",sans-serif;
+	background-color: rgb(220, 220, 220);
+}
+
+#container{
+	width: 100%;
+}
+
+#container>header{
+	/*background-color: #30472C;*/
+	/*border: solid;*/
+	background-color: #12355b;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: white;
+	/*width : 100%;*/
+}
+
+#container>header>h1{
+	color: white;
+	padding: 20px;
+	font-size: 6em;
+	/*margin: auto;
+	width: 50%;*/
+}
+
+#userSpace{
+	padding: 20px;
+}
+
+#userSpace ul{
+	list-style: none;
+}
+.userSpaceLink:link, .userSpaceLink:visited{
+	text-decoration: none;
+	color: white;
+}
+
+#content{
+	width: 80%;
+	min-width: 300px;
+	margin: auto;
+	/*background-color: #FFFFFF;*/
+}
+
+.billet{
+	margin: 20px 0px 20px 0px;
+	/*padding: 20px;*/
+	border-radius: 10px;
+	background-color: #FFFFFF;
+	/*background-color: rgb(220, 220, 220);*/
+}
+
+.billet > *{
+	/*border: solid;*/
+}
+
+.billet>header{
+	/*border:solid;
+	background-color: #BBBBBB;*/
+	/*padding: 20px;*/
+	padding: 20px 20px 0px 20px;
+
+}
+
+.billet>#billet_body{
+	padding: 20px;
+}
+
+.comment_link:link, .comment_link:visited{
+	margin: 30px;
+	padding: 8px;
+	text-decoration: none;
+  	background-color: rgb(60, 160, 240);
+  	color: white;
+  	/*border-radius: 4px;
+  	/*text-align: center;*/
+  	
+}
+/*
+
+#comments > a:hover, #comments > a:active {
+  background-color: rgb(79, 188, 255);
+}*/
+
+
+/*================== COMMENTAIRES ===================*/
+#lien_retour{
+	margin: 20px;
+	margin-top: 50px;
+	padding: 10px;
+	text-decoration: none;
+	font-size: 1.5em;
+	color: white;
+	background-color: #302F33;
+}
+
+#comment_section{
+	
+	/*padding: 20px;*/
+	/*padding: 20px 0px 20px 0px;*/
+	width: 80%;
+	margin: auto;
+	margin: 20px 0px 20px 0px;
+}
+
+
+#ajouter_comment{
+	/*margin: 0px 100px 0px 100px;
+	width: 80%;
+	margin: auto;*/
+	min-width: 300px;
+	/*border: solid;*/
+	color: white;
+	padding: 20px;
+	border-radius: 8px;
+		background-color: #12355b;
+
+}
+
+#ajouter_comment *{
+	/*border:solid;*/
+}
+
+#ajouter_comment textarea{
+	display: block;
+	width: 100%;
+	font-family: "trebuchet ms",sans-serif;
+}
+
+#ajouter_comment input{
+	size: 12;
+}
+
+.comment{
+	margin : 5px 0px 0px 0px;
+	padding: 10px;
+	border-radius: 8px;
+	background-color: #302F33;
+	color: white;
+}
+
+.comment h1{
+	font-size: 1.2em;
+}
+
+.comment h2{
+	font-size: 1em;
+}
+
+.comment p{
+	font-size: 1em;
+}
+
+#pages_navigation{
+	width: 100%;
+	background-color: white;
+	margin:0px;
+	padding: 0px;
+	background-color: rgb(249, 249, 249);
+	/*text-transform: uppercase;
+	/*font-family: cursive;*/
+	color: rgb(42, 49, 60);
+	border-radius: 5px;
+}
+
+#pages_navigation ul{
+	display: flex;
+	list-style: none;
+
+}
+
+#pages_navigation ul li{
+	color: black;
+	margin: 0px;
+	padding: 5px;
+	/*border :solid;*/
+	border-width: 1px;
+	/*font-size: 14px;*/
+	border-right-style: solid;
+	border-color: rgb(42, 49, 60);
+}
+
+#pages_navigation a{
+	text-decoration: none;
+	color: black;
+	margin: 0px;
+	padding: 0px;
+}

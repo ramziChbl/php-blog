@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "/opt/lampp/htdocs/tests/blog/admin/.htpasswd"
+Require valid-user
