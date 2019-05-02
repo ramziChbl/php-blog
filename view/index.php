@@ -36,12 +36,57 @@
 		 ?>
 		 </section>
 	
-
-		<section id="pages_navigation">
+		<nav id="pages_navigation">
 			<ul>
 			<?php
+				$nbCases = 10;
+				if($currentPage <= $nbCases - 2) // Show first pages
+				{
+					for($i = 1; $i<$currentPage; $i++)
+					{
+						echo '<li><a href="blog.php?page='.$i.'">'.$i.'</a></li>';
+					}
+					echo '<li id="currentPage">'.$currentPage.'</li>';
+
+					if($nbPages <= $nbCases) // 
+					{
+						for ($i=$currentPage + 1; $i < $nbPages; $i++)
+						{ 
+							echo '<li><a href="blog.php?page='.$i.'">'.$i.'</a></li>';
+						}
+						for ($i=$nbPages; $i <= $nbCases; $i++)
+						{ 
+							echo "<li></li>";
+						}
+					}
+					else
+					{
+						for ($i=$currentPage + 1; $i < $nbCases - 2; $i++)
+						{ 
+							echo '<li><a href="blog.php?page='.$i.'">'.$i.'</a></li>';
+						}
+						echo '<li>...</li>';
+						echo '<li><a href="blog.php?page='.$nbPages.'">'.$nbPages.'</a></li>';
+					}	
+				}
+				else // currentPage > nbCases - 2
+				{
+						echo '<li><a href="blog.php?page=1">1</a></li>';
+						echo '<li>...</li>';
+						for($i = $currentPage - 4; $i<$currentPage; $i++)
+						{
+							echo '<li><a href="blog.php?page='.$i.'">'.$i.'</a></li>';
+						}
+						echo '<li id="currentPage">'.$currentPage.'</li>';
+						for ($i=0;$i < 3 ;$i++)
+						{ 
+							echo "<li></li>";
+						}
+						//NOT FINISHED
+				}
 				//======= PAGE PREC ==========
-				echo "<li><a ";
+				/*echo "<li><span><a ";
+				
 				if ($currentPage > 1)
 				{
 					echo('href="blog.php?page='.($currentPage - 1).'"');
@@ -50,13 +95,13 @@
 				{
 					//echo('href="#"');
 				}
-				echo ">&larr; previous</a></li>";
+				echo ">previous</a></span></li>";
 
 				//======= PAGE COURANTE ==========
-				echo '<li>'.($currentPage).'</li>';
+				echo '<li><span>'.($currentPage).'</span></li>';
 
 				//======= PAGE SUIVANTE ==========
-				echo "<li><a ";
+				echo "<li><span><a ";
 
 		
 				if ($currentPage +1 < $nbLines['count']/$bPerPage)
@@ -67,10 +112,10 @@
 				{
 					//echo('href="#"');
 				}
-				echo ">next &rarr;</a></li>";
+				echo ">next</a></span></li>";*/
 			?>
 			</ul>
-		</section>
+		</nav>
 	</div>
 </body>
 </html>
