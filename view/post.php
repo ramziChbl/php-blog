@@ -7,25 +7,25 @@
 <body>
 	<!--<header><h1>Blog.</h1></header>-->
 	<div id="container">
-	<header>
-		<h1>Blog.</h1>
-		<div id="userSpace">
-			<ul>
-			<?php
-				if(isset($_SESSION["member"]))
-				{
-					echo '<li>Hello '. $_SESSION["member"]["pseudo"] .'</li>';
-					echo '<li><a class="userSpaceLink" href="controller/deconnection.php">Deconnection</a></li>';
-				}
-				else
-				{
-					echo '<li><a class="userSpaceLink" href="controller/connection.php">Connection</a></li>';
-					echo '<li><a class="userSpaceLink" href="controller/registration.php">Registration</a></li>';
-				}
-			?>
-			<ul>
-		</div>
-	</header>
+		<header>
+			<h1>Blog.</h1>
+			<div id="userSpace">
+				<ul>
+				<?php
+					if(isset($member))
+					{
+						echo '<li class="first_link"><a href="#">'. $member["pseudo"] .'</a></li>';
+						echo '<li class="second_link"><a class="userSpaceLink" href="deconnection.php">Deconnection</a></li>';
+					}
+					else
+					{
+						echo '<li><a class="first_link" href="connection.php">Login</a></li>';
+						echo '<li><a class="second_link" href="registration.php">Create an account</a></li>';
+					}
+				?>
+				<ul>
+			</div>
+		</header>
 	
 		<!-- LIEN VERS LE BLOG -->
 		<a id="lien_retour" href="../blog.php">Retour</a>

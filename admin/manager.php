@@ -17,14 +17,14 @@
 			<div id="listBillet">
 				<table>
 				<?php
-					$req = $bdd->query("SELECT * FROM billets ORDER BY date_creation DESC") or die(print_r($bdd->errorInfo()));
+					$req = $bdd->query("SELECT * FROM billets ORDER BY dateCreation DESC") or die(print_r($bdd->errorInfo()));
 					echo '<tr><th>Title</th><th>Author</th><th>Date</th><th>Upvotes</th></tr>';
 					while ($data = $req->fetch())
 					{
 						echo '<tr>
 							<td>'.$data["title"].'</td>
 							<td>'.$data["author"].'</td>
-							<td>'.$data["date_creation"].'</td>
+							<td>'.$data["dateCreation"].'</td>
 							<td>'.$data["upvotes"].'</td>
 							<td><a href="delete_post.php?id_post='.$data['id'].'">Delete</a></td>
 							<td><a href="manager.php?id_edit_post='.$data['id'].'">Edit</a></td>

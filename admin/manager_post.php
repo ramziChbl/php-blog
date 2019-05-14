@@ -16,12 +16,12 @@
 			die('Dumb error : ' . $e->getMessage());
 		}
 
-		$req = $bdd->prepare('INSERT INTO billets(title, content, date_creation, author) VALUES (:title, :content, :date_creation, :author)');
+		$req = $bdd->prepare('INSERT INTO billets(title, content, dateCreation, author) VALUES (:title, :content, :dateCreation, :author)');
 
 		$req->execute([
 			'title' => $_POST['title'],
 			'content' => $_POST['content'],
-			'date_creation' => date("Y-m-d H:i:s"),
+			'dateCreation' => date("Y-m-d H:i:s"),
 			'author' => $_POST['author'] 
 		]);
 	}

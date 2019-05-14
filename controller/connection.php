@@ -13,20 +13,20 @@
 		
 		if(!(empty($member)))
 		{
+			session_start();
+			$_SESSION["memberId"] = $member["id"];
+
 			if (isset($_POST["rememberMe"]) && $_POST["rememberMe"] == "yes")
 			{
 				// Remember user : Save Cookie
 				// PROBLEM COOKIE NOT ACCESSIBLE FROM blog
 				// I THINK IT MUST BE SET IN BLOG 
 				// CREATED A PHP SCRIPT IN BLOG TO SET COOKIE
-				session_start();
-				$_SESSION["member"] = $member;
+				
 				header('location: ../cookieSetter.php?id='.$member["id"]); // Script where cookie is set
 			}
 			else
 			{
-				session_start();
-				$_SESSION["member"] = $member;
 				header('location: ../blog.php');
 				die();
 			}	

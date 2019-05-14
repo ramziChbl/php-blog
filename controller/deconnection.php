@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	if(isset($_SESSION["member"]))
+	if(isset($_SESSION["memberId"]))
 	{
-		unset($_SESSION['member']);
+		unset($_SESSION['memberId']);
 	}
 	if(isset($_COOKIE['userId']))
 	{

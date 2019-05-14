@@ -3,7 +3,8 @@
 	include_once("../model/connect_mysql.php");
 	include_once("../model/get_billets.php");
 	include_once("../model/get_comments.php");
-	include_once("../model/get_members.php");
+	//include_once("../model/get_members.php");
+	include_once("membersController.php");
 
 	if(isset($_GET['id_billet']) && is_numeric($_GET['id_billet']))
 	{
@@ -15,8 +16,12 @@
 		$comments = get_comments($billet["id"]);
 		$showCommentButton = false;
 
-		//if(empty($_SESSION["member"]))
-		$loggedIn = (bool)!empty($_SESSION["member"]);
+		//if(empty($_SESSION["memberId"]))
+		$loggedIn = (bool)!empty($_SESSION["memberId"]);
+		if($loggedIn)
+		{
+
+		}
 		include_once("../view/post.php");
 	}
 	else

@@ -11,8 +11,11 @@ html {
 	padding: 0px;
 }
 body{
-	font-family:"trebuchet ms",sans-serif;
-	background-color: rgb(220, 220, 220);
+	/*font-family:"trebuchet ms",sans-serif;*/
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	/*background-color: rgb(220, 220, 220);*/
+	/*background-color: #f4f5f6;
+	/*color: #2c4250;*/
 }
 
 #container{
@@ -20,9 +23,8 @@ body{
 }
 
 #container>header{
-	/*background-color: #30472C;*/
-	/*border: solid;*/
-	background-color: #12355b;
+	/*background-color: #12355b;*/
+	background-color: #337ab7;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -31,8 +33,9 @@ body{
 }
 
 #container>header>h1{
-	color: white;
+	/*color: white;*/
 	padding: 20px;
+	padding-left: 10%;
 	font-size: 6em;
 	/*margin: auto;
 	width: 50%;*/
@@ -40,19 +43,48 @@ body{
 
 #userSpace{
 	padding: 20px;
+	font-size: 20px;
 }
 
 #userSpace ul{
+	height: 100%;
 	list-style: none;
+	display: flex;
+	/*align-items: flex-end;*/
+	align-items: center;
+	flex-wrap: wrap;
 }
-.userSpaceLink:link, .userSpaceLink:visited{
+
+#userSpace li{
+}
+
+#userSpace a:link, #userSpace a:visited{
 	text-decoration: none;
 	color: white;
+	text-transform: uppercase;
+	margin: 0 5px;
+	padding: 10px;
+	/*width: 40px;*/
+}
+
+#userSpace a:hover{
+	border-bottom:solid;
+	border-width: 1px;
+	border
+	border-radius: 5px;
+}
+
+#userSpace .first_link{
+	/*background-color: #E7A347;*/
+}
+
+#userSpace .second_link{
+	/*background-color: #A69A4B;*/
 }
 
 #content{
-	width: 80%;
-	min-width: 300px;
+	width: 86%;
+	min-width: 600px;
 	margin: auto;
 	/*background-color: #FFFFFF;*/
 }
@@ -75,6 +107,15 @@ body{
 	/*padding: 20px;*/
 	padding: 20px 20px 0px 20px;
 
+}
+
+.billet>header>h1{
+	color: #2c4250;
+}
+
+.billet #author:link, .billet #author:visited{
+	text-decoration: none;
+	color: #f72210;
 }
 
 .billet>#billet_body{
@@ -119,6 +160,7 @@ body{
 	background-color: #FFF;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
+	color: #666;
 	/*width: 50%;
 	margin: 0 auto;*/
 }
@@ -128,6 +170,7 @@ body{
 	width: 40px;
 	border-top:solid;
 	border-color: #2e6da4;
+	color: #666;
 }
 
 #pages_navigation a:link, #pages_navigation a:visited{
@@ -137,8 +180,8 @@ body{
 
 #currentPage{
 	text-decoration: none;
-	color: #FFFFFF;
 	background-color: #337ab7;
+	color: #FFF;
 }
 
 

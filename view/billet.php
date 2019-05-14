@@ -2,7 +2,7 @@
 	echo '<article class="billet">
 			<header>					
 			 	<h1>'.$billet['title'].'</h1>
-			 	<p>Posted on <time datetime="'.$billet['date_creation'].'">'.$billet['date_creation'].'</time> by <a href="#">'. $billet['author'] .'</a></p>
+			 	<p>Posted on <time datetime="'.$billet['date_creation'].'">'.$billet['date_creation'].'</time> by <a href="#" id="author">'. $billet['author'] .'</a></p>
 			</header>
 
 			<div id="billet_body">'. $billet['content'] .'</div>

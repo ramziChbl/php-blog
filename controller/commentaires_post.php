@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if (empty($_SESSION["member"]) || !isset($_POST['id_billet']))
+	if (empty($_SESSION["memberId"]) || !isset($_POST['id_billet']))
 	{
 		die('Erreur dans l\'ajout de commentaire.');
 	}
@@ -15,7 +15,7 @@
 
 	$req = $bdd->prepare('INSERT INTO comments(id_billet, id_author, comment, date_comment) VALUES (?, ?, ?, ?);');
 	$req->execute([
-		$_POST['id_billet'], $_SESSION["member"]["id"], $_POST['commentAjoute'], date("Y-m-d H:i:s") 
+		$_POST['id_billet'], $_SESSION["memberId"], $_POST['commentAjoute'], date("Y-m-d H:i:s") 
 	]);
 	header('location: ../controller/post.php?id_billet='.$_POST['id_billet']);
  ?>
