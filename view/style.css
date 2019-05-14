@@ -166,20 +166,23 @@ body{
 }
 
 #pages_navigation ul li{
-	padding: 8px;
+	/*padding: 8px;*/
 	width: 40px;
+	padding: 0px;
 	border-top:solid;
 	border-color: #2e6da4;
-	color: #666;
 }
 
 #pages_navigation a:link, #pages_navigation a:visited{
+	display: block;
+	width: 100%;
+	height: 100%;
 	text-decoration: none;
-	color: #666;
+	padding: 8px;
 }
 
-#currentPage{
-	text-decoration: none;
+.currentPage:link, .currentPage:visited{
+	/*text-decoration: none;*/
 	background-color: #337ab7;
 	color: #FFF;
 }

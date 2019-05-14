@@ -48,7 +48,7 @@
 						echo '<li><a href="blog.php?page='.$i.'">'.$i.'</a></li>';
 					}
 
-					echo '<li id="currentPage">'.$currentPage.'</li>';
+					echo '<li><a href="#" id="currentPage">'.$currentPage.'</a></li>';
 
 					for ($i=$currentPage + 1; $i <= $nbPages; $i++)
 					{ 
@@ -61,13 +61,13 @@
 				}
 				else
 				{
-					if($currentPage <= $nbCases-4)
+					if($currentPage <= $nbCases-4) // current < 6 first pages => Show all first pages
 					{
 						for($i = 1; $i<$currentPage; $i++)
 						{
 							echo '<li><a href="blog.php?page='.$i.'">'.$i.'</a></li>';
 						}
-						echo '<li id="currentPage">'.$currentPage.'</li>';
+						echo '<li><a href="#" class="currentPage">'.$currentPage.'</a></li>';
 						for ($i=$currentPage + 1; $i <= $nbCases - 2; $i++)
 						{ 
 							echo '<li><a href="blog.php?page='.$i.'">'.$i.'</a></li>';
@@ -83,7 +83,7 @@
 						for($i=$nbPages - 7; $i <= $nbPages; $i++)
 						{ 
 							if($i == $currentPage)
-								echo '<li id="currentPage">'.$currentPage.'</li>';
+								echo '<li><a href="#" class="currentPage">'.$currentPage.'</a></li>';
 							else
 								echo '<li><a href="blog.php?page='.$i.'">'.$i.'</a></li>';
 						}
@@ -96,7 +96,7 @@
 						{
 							echo '<li><a href="blog.php?page='.($currentPage - $i).'">'.($currentPage - $i).'</a></li>';
 						}
-						echo '<li id="currentPage">'.$currentPage.'</li>';
+						echo '<li><a href="#" id="currentPage">'.$currentPage.'</a></li>';
 
 						for ($i=$currentPage + 1; $i <= $nbCases - 2; $i++)
 						{ 
