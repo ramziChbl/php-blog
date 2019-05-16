@@ -48,7 +48,7 @@
 						echo '<li><a href="blog.php?page='.$i.'">'.$i.'</a></li>';
 					}
 
-					echo '<li><a href="#" id="currentPage">'.$currentPage.'</a></li>';
+					echo '<li><a href="#" class="currentPage">'.$currentPage.'</a></li>';
 
 					for ($i=$currentPage + 1; $i <= $nbPages; $i++)
 					{ 

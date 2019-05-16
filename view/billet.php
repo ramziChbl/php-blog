@@ -6,12 +6,20 @@
 			</header>
 
 			<div id="billet_body">'. $billet['content'] .'</div>
-			<footer>';
+			<footer>
+				<ul>
+					<li><button>up</button></li>
+					<li><button>down</button></li>
+
+				';
+
+	
+
 
 	if($showCommentButton)
 	{
-		echo '<a class="comment_link"  href="controller/post.php?id_billet='.$billet['id'].'" >Comments</a>';
+		echo '<li><a class="comment_link"  href="controller/post.php?id_billet='.$billet['id'].'" >Comments</a></li>';
 	}
-	echo '				</footer>
+	echo '				</ul></footer>
 				 </article>';
 ?>

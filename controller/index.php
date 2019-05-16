@@ -1,7 +1,7 @@
 <?php
 	//set_include_path("/opt/lampp/htdocs/tests/blog");
 	include_once("model/get_billets.php");
-	$bPerPage = 1;
+	$bPerPage = 2;
 	
 	$req = $bdd->query('SELECT COUNT(*) AS count FROM billets') or die(print_r($bdd->errorInfo()));
 	$nbLines = $req->fetch();

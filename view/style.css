@@ -11,11 +11,7 @@ html {
 	padding: 0px;
 }
 body{
-	/*font-family:"trebuchet ms",sans-serif;*/
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-	/*background-color: rgb(220, 220, 220);*/
-	/*background-color: #f4f5f6;
-	/*color: #2c4250;*/
 }
 
 #container{
@@ -63,15 +59,13 @@ body{
 	color: white;
 	text-transform: uppercase;
 	margin: 0 5px;
-	padding: 10px;
+	padding: 6px;
 	/*width: 40px;*/
 }
 
 #userSpace a:hover{
 	border-bottom:solid;
 	border-width: 1px;
-	border
-	border-radius: 5px;
 }
 
 #userSpace .first_link{
@@ -91,10 +85,11 @@ body{
 
 .billet{
 	margin: 20px 0px 20px 0px;
-	/*padding: 20px;*/
-	border-radius: 10px;
+	padding: 10px;
+	border : 1px solid rgb(224, 224, 224);
+	border-radius: 4px;
 	background-color: #FFFFFF;
-	/*background-color: rgb(220, 220, 220);*/
+	color: #2c4250;
 }
 
 .billet > *{
@@ -122,23 +117,39 @@ body{
 	padding: 20px;
 }
 
-.comment_link:link, .comment_link:visited{
-	margin: 30px;
-	padding: 8px;
-	text-decoration: none;
-  	/*background-color: rgb(60, 160, 240);*/
-  		background-color: #337ab7;
-
-  	color: white;
-  	/*border-radius: 4px;
-  	/*text-align: center;*/
-  	
+.billet footer{
+	/*background-color: rgb(224, 224, 224);
+	/*display: inline-block;*/
 }
-/*
 
-#comments > a:hover, #comments > a:active {
-  background-color: rgb(79, 188, 255);
-}*/
+.billet footer ul{
+	display: inline-flex;
+	list-style: none;
+	margin-left: 20px;
+}
+
+.billet footer li{
+	border:1px solid #ccc;
+	border-radius: 2px;
+	margin: 0 8px 0 0;
+	font-family: Ubuntu;
+	/*display: inline-block;*/
+}
+
+.billet footer a, .billet footer button{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	/*color: #337ab7;*/
+	color: #bbbbbb;
+	box-sizing: border-box;
+	padding: 8px;
+	display: block;
+	border:none;
+	font-size: 14px;
+
+}
+
 #pages_navigation{
 	
 	/*background-color: rgb(249, 249, 249);*/
