@@ -1,5 +1,5 @@
 <?php
-	function get_comments($idBillet/*, $offset, $limit*/)
+	function get_comments($idBillet)
 	{
 		global $bdd;
 		$idBillet = (int)$idBillet;
