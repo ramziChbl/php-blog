@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include_once("../model/connect_mysql.php");
+	connectDB();
 	include_once("../model/get_billets.php");
 	include_once("../model/get_comments.php");
 	//include_once("../model/get_members.php");
@@ -17,8 +18,8 @@
 		$showCommentButton = false;
 
 		//if(empty($_SESSION["memberId"]))
-		$loggedIn = (bool)!empty($_SESSION["memberId"]);
-		if($loggedIn)
+		$_SESSION["loggedIn"] = (bool)!empty($_SESSION["memberId"]);
+		if($_SESSION["loggedIn"])
 		{
 
 		}

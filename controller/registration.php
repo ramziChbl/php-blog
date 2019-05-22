@@ -1,5 +1,6 @@
 <?php
 	include_once("../model/connect_mysql.php");
+	connectDB();
 	include_once("../model/get_members.php");
 
 	if(isset($_POST["pseudo"]) && isset($_POST["pass"]) && isset($_POST["passConfirm"]) && isset($_POST["mail"]))

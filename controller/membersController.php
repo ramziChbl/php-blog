@@ -1,17 +1,17 @@
 <?php
-	include_once(dirname(__FILE__)."/../model/get_members.php");
-	$loggedIn = false;
+	include_once("model/get_members.php");
+	$_SESSION["loggedIn"] = false;
 	$member = NULL;
 	if(isset($_COOKIE["userId"]))
 	{
 		$member = get_member_by_id(intval($_COOKIE["userId"]));
 		if(empty($member))
 		{
-			$loggedIn = false;
+			$_SESSION["loggedIn"] = false;
 		}
 		else
 		{
-			$loggedIn = true;
+			$_SESSION["loggedIn"] = true;
 			$_SESSION["memberId"] = $member["id"];
 		}
 	}
@@ -20,17 +20,17 @@
 	{
 		if(!isset($_POST["pseudo"]) || !isset($_POST["pass"]))
 		{
-			$loggedIn = false;
+			$_SESSION["loggedIn"] = false;
 		}
 		else
 		{
 			$member = get_member($_POST["pseudo"], $_POST["pass"]);
 			if(is_null($member))
 			{
-				$loggedIn = false;
+				$_SESSION["loggedIn"] = false;
 			}
 			{
-				$loggedIn = true;
+				$_SESSION["loggedIn"] = true;
 				$_SESSION["memberId"] = $member["id"];
 			}
 		}

@@ -12,6 +12,7 @@
 	}
 
 	require("../model/connect_mysql.php");
+	connectDB();
 	require("../model/post_comment.php");
 
 	post_comment($_POST['id_billet'], $_POST['commentAjoute'], $_SESSION["memberId"], $bdd);

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo $billet["title"];?></title>
-	<link rel="stylesheet" type="text/css" href="../view/style.css">
+	<title><?php echo $billet->title();?></title>
+	<link rel="stylesheet" type="text/css" href="view/style.css">
 </head>
 <body>
 	<!--<header><h1>Blog.</h1></header>-->
@@ -31,7 +31,7 @@
 		<a id="lien_retour" href="../blog.php">Retour</a>
 		<!-- AFFICHAGE DU BILLET -->
 		<?php
-			include("../view/billet.php");
+			include("view/billet.php");
 		?>
 
 		<!-- COMMENTAIREs -->
