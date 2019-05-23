@@ -3,9 +3,7 @@
 	require "lib/autoload.php";
 
 	require "controller/controller.php";
-	require("controller/membersController.php");
-	
-
+	//require("controller/membersController.php");
 
 	if(!isset($_GET["action"]))
 		showListPosts();
@@ -24,8 +22,22 @@
 				# code...
 				break;
 
-			case 'posts':
-				# code...
+			case 'login':
+				if(!($currentUserController->logged()))
+					showLoginPage();
+				else
+					showListPosts();
+				break;
+
+			case 'register':
+				if(!($currentUserController->logged()))
+					showRegisterPage();
+				else
+					showListPosts();
+				break;
+
+			case 'logout':
+				logout();
 				break;
 			
 			default:

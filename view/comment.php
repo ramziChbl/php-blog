@@ -1,5 +1,6 @@
 <?php
-	$commentAuthor = get_member_by_id($comment["id_author"]);
+	//$commentAuthor = get_member_by_id($comment["id_author"]);
+	$commentAuthor = 
 	if(empty($commentAuthor))
 		$pseudoCommentAuthor = "[deleted]";
 	else

@@ -12,15 +12,15 @@
 			<div id="userSpace">
 				<ul>
 				<?php
-					if(isset($member))
+					if($currentUserController->logged())
 					{
-						echo '<li class="first_link"><a href="#">'. $member["pseudo"] .'</a></li>';
-						echo '<li class="second_link"><a class="userSpaceLink" href="deconnection.php">Deconnection</a></li>';
+						echo '<li class="first_link"><a href="#">'. /*$member["pseudo"]*/ ($currentUserController->loggedUser())->pseudo() .'</a></li>';
+						echo '<li class="second_link"><a class="userSpaceLink" href="?action=logout">Deconnection</a></li>';
 					}
 					else
 					{
-						echo '<li><a class="first_link" href="connection.php">Login</a></li>';
-						echo '<li><a class="second_link" href="registration.php">Create an account</a></li>';
+						echo '<li><a class="first_link" href="?action=login">Login</a></li>';
+						echo '<li><a class="second_link" href="?action=register">Create an account</a></li>';
 					}
 				?>
 				<ul>
@@ -37,7 +37,7 @@
 		<!-- COMMENTAIREs -->
 		
 		<div id="comment_section">
-			<?php if($_SESSION["loggedIn"])
+			<?php if($currentUserController->logged())
 			{
 			?>
 			<div id="ajouter_comment">

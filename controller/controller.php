@@ -7,6 +7,7 @@
 		//$newsManager = new NewsManagerPDO(DBFactory::db());
 		//$db = DBFactory::getMysqlConnexionWithPDO();
 		global $db;
+		global $currentUserController;
 		$newsManager = new NewsManagerPDO($db);
 		$nbLines = $newsManager->count();
 
@@ -37,6 +38,8 @@
 
 	function showPost()
 	{
+		global $currentUserController;
+
 		if(isset($_GET["id"]))
 		{
 			$postId = (int)$_GET["id"];
@@ -45,6 +48,7 @@
 			global $db;
 			$newsManager = new NewsManagerPDO($db);
 			$CommentManager = new CommentManager($db);
+			$UserManager = new UserManager($db);
 
 			$billet = $newsManager->getNews($postId);
 			$comments = $CommentManager->getComments($postId);
@@ -65,4 +69,45 @@
 	function addComment()
 	{
 
+	}
+
+	function showLoginPage()
+	{
+		global $currentUserController;
+		if(!($currentUserController->logged()) && !($currentUserController->login()))
+		{
+			include "view/loginView.php";
+		}
+		//$userManager = new UserManager();
+		/*if(isset($_POST['submit'])) // Login form filled
+		{
+			if(!empty($_POST["pseudo"]) && !empty($_POST["pass"]))
+			{
+
+			}
+		}*/
+		else
+		{
+			showListPosts();
+		}
+	}
+
+	function showRegisterPage()
+	{
+		global $currentUserController;
+		if(!$currentUserController->register())
+		{
+			include "view/registerView.php";
+		}
+		else
+		{
+			showListPosts();
+		}
+	}
+
+	function logout()
+	{
+		global $currentUserController;
+		$currentUserController->logout();
+		showListPosts();
 	}

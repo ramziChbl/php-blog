@@ -15,7 +15,7 @@
 		if(!(empty($member)))
 		{
 			session_start();
-			$_SESSION["memberId"] = $member["id"];
+			$_SESSION["userId"] = $member["id"];
 
 			if (isset($_POST["rememberMe"]) && $_POST["rememberMe"] == "yes")
 			{
