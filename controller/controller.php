@@ -68,7 +68,20 @@
 
 	function addComment()
 	{
+		global $db;
+		$newsManager = new NewsManagerPDO($db);
+		$CommentManager = new CommentManager($db);
+		$UserManager = new UserManager($db);
+		$currentUserController = new CurrentUserController();
 
+		if (isset($_POST['submit']))
+		{
+			if(!empty($_POST['comment']))
+			{
+				$CommentManager->insertComment($_POST['id_billet'], $_POST['comment'], $currentUserController->loggedUser()->id());
+			}
+		}
+		showPost();
 	}
 
 	function showLoginPage()

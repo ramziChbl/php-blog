@@ -18,6 +18,10 @@
 				showPost();
 				break;
 
+			case 'addComment':
+				addComment();
+				break;
+
 			case 'addPost':
 				# code...
 				break;

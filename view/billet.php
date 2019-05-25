@@ -13,9 +13,6 @@
 
 				';
 
-	
-
-
 	if($showCommentButton)
 	{
 		echo '<li><a class="comment_link"  href="?action=post&id='.$billet->id().'" >Comments</a></li>';

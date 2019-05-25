@@ -28,7 +28,7 @@
 		</header>
 	
 		<!-- LIEN VERS LE BLOG -->
-		<a id="lien_retour" href="../blog.php">Retour</a>
+		<a id="lien_retour" href="?action=list">Retour</a>
 		<!-- AFFICHAGE DU BILLET -->
 		<?php
 			include("view/billet.php");
@@ -40,16 +40,17 @@
 			<?php if($currentUserController->logged())
 			{
 			?>
-			<div id="ajouter_comment">
-				<form action="../controller/commentaires_post.php" method="post">
+			<div id="addComment">
+				<?php  echo '<form action="?action=addComment&id='.$billet->id().'" method="post">';?>
+				<!--<form action="?action=comment&idNews=<?php  ?>" method="post"> -->
 					<!--
 					<label for="nomUtil">Nom d'utilisateur :</label></br>
 					<input type="text" name="nomUtil" id="nomUtil"></br>
 					-->
-					<label for="commentAjoute">Commentaire :</label><textarea name="commentAjoute" id="commentAjoute"></textarea>
-					<input type="submit" value="Comment">
+					<label for="comment">Commentaire :</label><textarea name="comment" id="commentAjoute"></textarea>
+					<input type="submit" name="submit" value="Comment">
 					<?php  
-						echo '<input type="hidden" name="id_billet" value="'.$_GET['id_billet'].'">';
+						echo '<input type="hidden" name="id_billet" value="'.$billet->id().'">';
 					?>
 
 				</form>
