@@ -4,37 +4,30 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
-}
-
-*{
-	margin: 0px;
+  margin: 0px;
 	padding: 0px;
 }
+
 body{
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 #container{
-	width: 100%;
+	/*width: 100%;*/
 }
 
 #container>header{
-	/*background-color: #12355b;*/
 	background-color: #337ab7;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	color: white;
-	/*width : 100%;*/
 }
 
 #container>header>h1{
-	/*color: white;*/
 	padding: 20px;
 	padding-left: 10%;
 	font-size: 6em;
-	/*margin: auto;
-	width: 50%;*/
 }
 
 #userSpace{
@@ -60,7 +53,6 @@ body{
 	text-transform: uppercase;
 	margin: 0 5px;
 	padding: 6px;
-	/*width: 40px;*/
 }
 
 #userSpace a:hover{
@@ -68,15 +60,8 @@ body{
 	border-width: 1px;
 }
 
-#userSpace .first_link{
-	/*background-color: #E7A347;*/
-}
 
-#userSpace .second_link{
-	/*background-color: #A69A4B;*/
-}
-
-#content{
+main{
 	width: 86%;
 	min-width: 600px;
 	margin: auto;
@@ -147,6 +132,7 @@ body{
 	display: block;
 	border:none;
 	font-size: 14px;
+	cursor: pointer;
 
 }
 
@@ -199,7 +185,7 @@ body{
 }
 
 
-/*================== COMMENTAIRES ===================*/
+/*================== COMMENTS ===================*/
 #lien_retour{
 	margin: 20px;
 	margin-top: 50px;
@@ -210,7 +196,7 @@ body{
 	background-color: #302F33;
 }
 
-#comment_section{
+#commentSection{
 	
 	/*padding: 20px;*/
 	/*padding: 20px 0px 20px 0px;*/
@@ -220,38 +206,54 @@ body{
 }
 
 
-#ajouter_comment{
-	/*margin: 0px 100px 0px 100px;
-	width: 80%;
-	margin: auto;*/
+#addComment{
 	min-width: 300px;
-	/*border: solid;*/
 	color: white;
 	padding: 20px;
-	border-radius: 8px;
-		background-color: #12355b;
-
+	border-radius: 2px;
+	background-color: #337ab7;
 }
 
-#ajouter_comment *{
-	/*border:solid;*/
+#addComment p a{
+	text-decoration: none;
+	color: #0B3249;
 }
 
-#ajouter_comment textarea{
+#addComment textarea{
+
 	display: block;
+	margin: 5px 0;
+	padding: 5px;
 	width: 100%;
-	font-family: "trebuchet ms",sans-serif;
+	/*max-width: 90%;*/
+	/*resize:none;*/
+	resize: vertical;
+	color: black;
+	background-color: white;
+	border: none;
+	/*font-family: "trebuchet ms",sans-serif;*/
 }
 
-#ajouter_comment input{
-	size: 12;
+#addComment input[type="submit"]{
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-weight: bold;
+	background-color: #0B3249;
+	color: #FFFFFF;
+	box-sizing: border-box;
+	border:none;
+	border-radius: 2px;
+	padding: 8px;
+	display: block;
+	font-size: 14px;
 }
 
 .comment{
-	margin : 5px 0px 0px 0px;
+	margin : 2px 0px 0px 2px;
 	padding: 10px;
-	border-radius: 8px;
-	background-color: #302F33;
+	border-radius: 2px;
+	background-color: #333333;
 	color: white;
 }
 

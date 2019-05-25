@@ -6,30 +6,17 @@
 	{
 		private $_db;
 		private $_newsPerPage = 2;
-		/*private $_host;
-		private $_dbname;
-		private $_user;
-		private $_pass;*/
-
+	
 		function __construct($db)
 		{
 			$this->_db = $db;
-			/*$_host = "localhost";
-			$_dbname = "test";
-			$_user = "ramzi";
-			$_pass = "pourquoi99";
-
-			try {
-				$_db = new PDO('mysql:host='.$_host.';dbname='.$_dbname.';charset=utf8', $_user, $_pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-			} catch (PDOException $e) {
-				die('Dumb error : ' . $e->getMessage());
-			}*/
 		}
 
 		function newsPerPage()
 		{
 			return $this->_newsPerPage;
 		}
+
 
 		function count()
 		{
@@ -87,78 +74,7 @@
 
 			$req->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'News');
 			$news = $req->fetch();
-			/*$news_values = $req->fetch();
-			$news = new News($news_values);*/
-			//$news->hydrate($news_values);
 			return $news;
 		}
-		/*
-		function getMembers()
-		{
-			$req = $_db->prepare("SELECT * FROM members");
-			$req->execute();
-			$members = $req->fetchAll();
-			return $members;
-		}
-
-		function getMember($pseudo, $pass)
-		{
-			$req = $_db->prepare('SELECT * FROM members WHERE pseudo=:pseudo AND pass=:pass');
-			$req->bindParam(":pseudo", $pseudo);
-			$req->bindParam(":pass", $pass);
-			$req->execute();
-			$member = $req->fetchAll();
-			if(empty($member))
-			{
-				return $member;
-			}
-			else
-			{
-				return $member[0];
-			}
-		}
-
-		function get_member_by_id($id)
-		{
-			$req = $_db->prepare('SELECT * FROM members WHERE id=:id');
-			$req->bindParam(":id", $id);
-			$req->execute();
-			$member = $req->fetchAll();
-			if(empty($member))
-			{
-				return $member;
-			}
-			else
-			{
-				return $member[0];
-			}
-		}
-
-		function get_member_by_pseudo($pseudo)
-		{
-			global $_db;
-			$req = $_db->prepare('SELECT * FROM members WHERE pseudo=:pseudo');
-			$req->bindParam(":pseudo", $pseudo);
-			$req->execute();
-			$member = $req->fetchAll();
-			if(empty($member))
-			{
-				return $member;
-			}
-			else
-			{
-				return $member[0];
-			}
-		}
-
-		function insert_member($pseudo, $pass, $mail)
-		{
-			$req = $_db->prepare('INSERT INTO members(`pseudo`, `pass`, `mail`, `registration_date`) VALUES(:pseudo,:pass,:mail,CURRENT_DATE)');
-			$req->bindParam(":pseudo", $pseudo);
-			$req->bindParam(":pass", $pass);
-			$req->bindParam(":mail", $mail);
-			$req->execute();
-		}*/
-
 	}
 ?>

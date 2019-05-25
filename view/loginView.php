@@ -2,10 +2,11 @@
 <html>
 <head>
 	<title>Connection</title>
-	<link rel="stylesheet" type="text/css" href="view/style_members_signing.css">
+	<link rel="stylesheet" type="text/css" href="public/style_members_signing.css">
 </head>
 <body>
 	<div id="container">
+		<a id="lien_retour" href="?action=list">Home</a>
 		<div id="content">
 			
 			<section id="mainContent">
@@ -19,7 +20,7 @@
 			</section>
 			<aside>
 				<h2>New member?</h2>
-				<a href="?action=register">Registration</a>
+				<a href="?action=register">Register</a>
 			</aside>
 		</div>
 	</div>

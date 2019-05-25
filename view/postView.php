@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title><?php echo $billet->title();?></title>
-	<link rel="stylesheet" type="text/css" href="view/style.css">
+	<link rel="stylesheet" type="text/css" href="public/style.css">
 </head>
 <body>
 	<!--<header><h1>Blog.</h1></header>-->
@@ -26,28 +26,31 @@
 				<ul>
 			</div>
 		</header>
-	
 		<!-- LIEN VERS LE BLOG -->
-		<a id="lien_retour" href="?action=list">Retour</a>
+		<a id="lien_retour" href="?action=list">Back</a>
 		<!-- AFFICHAGE DU BILLET -->
-		<?php
-			include("view/billet.php");
-		?>
+		<main id="content">
+			<section id="billets">
+				<?php
+					include("view/billet.php");
+				?>
+			</section>
+		</main>
+			
 
 		<!-- COMMENTAIREs -->
 		
-		<div id="comment_section">
+		<section id="commentSection">
 			<?php if($currentUserController->logged())
 			{
 			?>
 			<div id="addComment">
-				<?php  echo '<form action="?action=addComment&id='.$billet->id().'" method="post">';?>
-				<!--<form action="?action=comment&idNews=<?php  ?>" method="post"> -->
-					<!--
-					<label for="nomUtil">Nom d'utilisateur :</label></br>
-					<input type="text" name="nomUtil" id="nomUtil"></br>
-					-->
-					<label for="comment">Commentaire :</label><textarea name="comment" id="commentAjoute"></textarea>
+				<?php  
+					echo '<form action="?action=addComment&id='.$billet->id().'" method="post">';
+					echo '	<p>Comment as <a href="#">'.$currentUserController->loggedUser()->pseudo().'</a></p>';
+				?>
+					
+					<textarea name="comment" id="commentAjoute" rows="6"></textarea>
 					<input type="submit" name="submit" value="Comment">
 					<?php  
 						echo '<input type="hidden" name="id_billet" value="'.$billet->id().'">';
@@ -56,21 +59,8 @@
 				</form>
 			</div>
 			<?php } ?>
-			<!--
-			<div id="ajouter_comment">
-				<form action="../view/commentaires_post.php" method="post">
-					<label for="nomUtil">Nom d'utilisateur :</label></br>
-					<input type="text" name="nomUtil" id="nomUtil"></br>
-					<label for="commentAjoute">Commentaire :</label><textarea name="commentAjoute" id="commentAjoute"></textarea>
-					<input type="submit" value="Valider">
-					<?php  
-						//echo '<input type="hidden" name="id_billet" value="'.$_GET['id_billet'].'">';
-					?>
 
-				</form>
-			</div>-->
-
-			<!-- AFFICHAGE DES COMMENTAIRES -->
+			<!-- Show comments -->
 			<div id="commentaires">
 				<?php
 					foreach ($comments as $comment)
@@ -80,7 +70,7 @@
 				 ?>	
 				
 			</div>
-		</div>
+		</section>
 
 	</div>
 </body>

@@ -2,10 +2,11 @@
 <html>
 <head>
 	<title>Registation</title>
-	<link rel="stylesheet" type="text/css" href="view/style_members_signing.css">
+	<link rel="stylesheet" type="text/css" href="public/style_members_signing.css">
 </head>
 <body>
 	<div id="container">
+		<a id="lien_retour" href="?action=list">Home</a>
 		<div id="content">
 			<section id="mainContent">
 				<h1>Register</h1>
@@ -19,7 +20,7 @@
 			</section>
 			<aside>
 				<h2>Already have an account?</h2>
-				<a href="../controller/connection.php">Login</a>
+				<a href="?action=login">Login</a>
 			</aside>
 		</div>
 	</div>

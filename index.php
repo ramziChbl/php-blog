@@ -1,7 +1,6 @@
 <?php
 	session_start();
 	require "lib/autoload.php";
-
 	require "controller/controller.php";
 	//require("controller/membersController.php");
 
