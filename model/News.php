@@ -64,7 +64,7 @@
 		}
 
 		public function setTitle($title){
-			$this->_title = $title;
+			$this->title = $title;
 		}
 		public function setId($id){
 			$this->id = $id;

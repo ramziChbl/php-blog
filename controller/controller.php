@@ -25,10 +25,6 @@
 		foreach ($billets as $key => $billet) {
 			$billets[$key]->setTitle(htmlspecialchars($billet->title()));
 			$billets[$key]->setContent(htmlspecialchars($billet->content()));
-
-			// FOR ARRAY
-			/*$billets[$key]["title"] = htmlspecialchars($billet["title"]);
-			$billets[$key]["content"] = nl2br(htmlspecialchars($billet["content"]));*/
 		}
 
 		$showCommentButton = true;
@@ -63,7 +59,32 @@
 
 	function addPost()
 	{
-
+		global $db;
+		$newsManager = new NewsManagerPDO($db);
+		$currentUserController = new CurrentUserController();
+		if (isset($_POST['submit']) && $currentUserController->logged())
+		{
+			if(!empty($_POST['title']) && !empty($_POST['content']))
+			{
+				$title = htmlspecialchars($_POST['title']);
+				$content = htmlspecialchars($_POST['content']);
+				$newPost = new News();
+				$newPost->setTitle($title);
+				$newPost->setContent($content);
+				$newPost->setCreationDate(date("Y-m-d H:i:s"));
+				$newPost->setAuthor($currentUserController->loggedUser()->pseudo());
+				
+				$newsManager->add($newPost);
+				showListPosts();
+			}
+			else
+			{
+			}
+		}
+		else
+		{
+			include "view/addPostView.php";
+		}
 	}
 
 	function addComment()

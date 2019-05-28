@@ -3,6 +3,7 @@
 <head>
 	<title><?php echo $billet->title();?></title>
 	<link rel="stylesheet" type="text/css" href="public/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<!--<header><h1>Blog.</h1></header>-->

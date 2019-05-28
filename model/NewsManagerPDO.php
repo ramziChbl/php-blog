@@ -29,6 +29,7 @@
 		{
 			$req = $this->_db->prepare('INSERT INTO billets(title, content, dateCreation, author) VALUES (:title, :content, :dateCreation, :author)');
 
+
 			$req->execute([
 				'title' => $news->title(),
 				'content' => $news->content(),

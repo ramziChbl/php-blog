@@ -22,7 +22,12 @@
 				break;
 
 			case 'addPost':
-				# code...
+				if($currentUserController->logged())
+				{
+					addPost();
+				}
+				else
+					showListPosts();
 				break;
 
 			case 'login':
