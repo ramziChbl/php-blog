@@ -1,7 +1,4 @@
 <?php
-	/*require "model/NewsManager.php";
-	require "model/CommentManager.php";*/
-
 	function showListPosts()
 	{
 		//$newsManager = new NewsManagerPDO(DBFactory::db());
@@ -24,7 +21,7 @@
 		
 		foreach ($billets as $key => $billet) {
 			$billets[$key]->setTitle(htmlspecialchars($billet->title()));
-			$billets[$key]->setContent(htmlspecialchars($billet->content()));
+			$billets[$key]->setContent(nl2br(htmlspecialchars($billet->content())));
 		}
 
 		$showCommentButton = true;

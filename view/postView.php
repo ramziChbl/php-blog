@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<!--<header><h1>Blog.</h1></header>-->
 	<div id="container">
 		<header>
 			<h1>Blog.</h1>
@@ -16,7 +15,9 @@
 					if($currentUserController->logged())
 					{
 						echo '<li class="first_link"><a href="#">'. /*$member["pseudo"]*/ ($currentUserController->loggedUser())->pseudo() .'</a></li>';
-						echo '<li class="second_link"><a class="userSpaceLink" href="?action=logout">Deconnection</a></li>';
+						echo '<li class="second_link"><a class="userSpaceLink" href="?action=addPost">Write Post</a></li>';
+						echo '<li class="second_link"><a class="userSpaceLink" href="?action=logout">Logout</a></li>';
+						
 					}
 					else
 					{
@@ -28,7 +29,7 @@
 			</div>
 		</header>
 		<!-- LIEN VERS LE BLOG -->
-		<a id="lien_retour" href="?action=list">Back</a>
+		<a id="lien_retour" href="?action=list">Home</a>
 		<!-- AFFICHAGE DU BILLET -->
 		<main id="content">
 			<section id="billets">

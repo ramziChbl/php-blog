@@ -30,8 +30,8 @@ body{
 #container>header>h1{
 	padding: 20px;
 	padding-left: 10%;
-	font-size: 6em;
-	flex:2;
+	font-size: 3em;
+	flex:1;
 }
 
 #userSpace{
@@ -270,4 +270,33 @@ main{
 
 .comment p{
 	font-size: 1em;
+}
+
+/*=================== addPostView ========================*/
+section#addBillet{
+	margin: 20px;
+	padding: 10px;
+}
+
+section#addBillet h1, section#addBillet input[type="submit"]{
+	margin-left: 30px;
+}
+
+section#addBillet h1{
+	color: #0B3249;
+}
+
+section#addBillet>form>div{
+	width: 100%;
+	text-align: center;
+}
+
+section#addBillet textarea, section#addBillet input[type="text"]{
+	resize: none;
+	overflow-x: hidden;
+	overflow-wrap: break-word;
+	width: 95%;
+	margin: 10px;
+	padding: 4px;
+	/*margin: auto;*/
 }

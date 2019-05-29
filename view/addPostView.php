@@ -15,7 +15,7 @@
 					if($currentUserController->logged())
 					{
 						echo '<li class="first_link"><a href="#">'. /*$member["pseudo"]*/ ($currentUserController->loggedUser())->pseudo() .'</a></li>';
-						echo '<li class="second_link"><a class="userSpaceLink" href="?action=logout">Deconnection</a></li>';
+						echo '<li class="second_link"><a class="userSpaceLink" href="?action=logout">Logout</a></li>';
 					}
 					else
 					{
@@ -26,16 +26,17 @@
 				<ul>
 			</div>
 		</header>
-
+		<a id="lien_retour" href="?action=list">Home</a>
 		<main>
 			<section id="addBillet">
+				<h1>New post</h1>
 				<form method="post" action="?action=addPost">
-					<table>
-						<h1>New post</h1>								
-						<!--<tr><td><input type="text" name="author" placeholder="Author" required="required"></td></tr>-->
-						<tr><td><input type="text" name="title" placeholder="Title" required="required"></td></tr>
-						<tr><td><textarea name="content" placeholder="Post" required="required"></textarea></td></tr>		
-					</table>
+						<div>
+						<input type="text" name="title" placeholder="Title" required="required">
+						</div>
+						<div>
+						<textarea name="content" placeholder="Post" required="required" rows="10"></textarea>
+						</div>
 					<input type="submit" value="Validate" name="submit">
 				</form>
 			</section>

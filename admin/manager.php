@@ -25,7 +25,7 @@
 							<td>'.$data["title"].'</td>
 							<td>'.$data["author"].'</td>
 							<td>'.$data["dateCreation"].'</td>
-							<td>'.$data["upvotes"].'</td>
+							
 							<td><a href="delete_post.php?id_post='.$data['id'].'">Delete</a></td>
 							<td><a href="manager.php?id_edit_post='.$data['id'].'">Edit</a></td>
 						</tr>

@@ -14,8 +14,10 @@
 				<?php
 					if($currentUserController->logged())
 					{
-						echo '<li class="first_link"><a href="#">'. /*$member["pseudo"]*/ ($currentUserController->loggedUser())->pseudo() .'</a></li>';
-						echo '<li class="second_link"><a class="userSpaceLink" href="?action=logout">Deconnection</a></li>';
+						echo '<li class="first_link"><a href="#">'.($currentUserController->loggedUser())->pseudo() .'</a></li>';
+						echo '<li class="second_link"><a class="userSpaceLink" href="?action=addPost">Write Post</a></li>';
+						echo '<li class="second_link"><a class="userSpaceLink" href="?action=logout">Logout</a></li>';
+						
 					}
 					else
 					{
