@@ -7,11 +7,20 @@
 
 			<div id="billet_body">'. $billet->content() .'</div>
 			<footer>
-				<ul>
-					<li><button>up</button></li>
-					<li><button>down</button></li>
+				<ul>';
+	echo '			<li><button';
+	if($currentUserController->logged())
+	{
+		echo ' onclick="vote(this, '.$billet->id().', '.$currentUserController->loggedUser()->id().', 1)"';
+	}
+	echo '>up</button></li>';
 
-				';
+	echo '			<li><button';
+	if($currentUserController->logged())
+	{
+		echo ' onclick="vote(this, '.$billet->id().', '.$currentUserController->loggedUser()->id().', -1)"';
+	}
+	echo '>down</button></li>';
 
 	if($showCommentButton)
 	{

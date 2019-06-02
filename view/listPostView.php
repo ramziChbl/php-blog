@@ -4,6 +4,68 @@
 	<title>Blog</title>
 	<link rel="stylesheet" type="text/css" href="public/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script type="text/javascript">
+
+		function getXMLHttpRequest()
+		{
+			var xhr = null;
+			
+			if (window.XMLHttpRequest || window.ActiveXObject) {
+				if (window.ActiveXObject) {
+					try {
+						xhr = new ActiveXObject("Msxml2.XMLHTTP");
+					} catch(e) {
+						xhr = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+				} else {
+					xhr = new XMLHttpRequest(); 
+				}
+			} else {
+				alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+				return null;
+			}
+			
+			return xhr;
+		}
+
+		function sendxhr(postId, userId,vote)
+		{
+			var xhr = getXMLHttpRequest();
+			xhr.onreadystatechange = function()
+			{
+	        	if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+	                alert("Done"); // Données textuelles récupérées
+	            }
+	        }
+	        var dir = 1;
+	        if(vote < 0)
+	        {
+	        	dir = -1;
+	        }
+
+			xhr.open("GET", "voteTarget.php?postId="+ postId +"&userId="+ userId +"&dir=" + vote, true);
+			xhr.send();
+			//if POST ====> xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+		}
+
+		function vote(button, postId, userId,vote)
+		{					
+			sendxhr(postId, userId,vote);
+			if(vote > 0)
+			{
+				button.style.background="green";
+				button.style.color = "white";
+			}
+			else
+			{
+				button.style.background="red";
+				button.style.color = "white";
+			}
+		}
+	</script>
+
 </head>
 <body>
 	<div id="container">
