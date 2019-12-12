@@ -44,6 +44,8 @@
 			$UserManager = new UserManager($db);
 
 			$billet = $newsManager->getNews($postId);
+			$billet->setTitle(htmlspecialchars($billet->title()));
+			$billet->setContent(nl2br(htmlspecialchars($billet->content())));
 			$comments = $CommentManager->getComments($postId);
 
 			$showCommentButton = false;

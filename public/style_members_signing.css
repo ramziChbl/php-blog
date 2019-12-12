@@ -3,25 +3,25 @@
 	padding:0px;
 }
 
-#content{
-	width: 50%;
+#Usercontent{
+	/*padding-top: 95px;*/
+	width: 54%;
 	min-width: 400px;
 	margin: auto;
-	margin-top: 50px;
 	display: flex;
 	flex-wrap: wrap;
 	color: white;
-	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+	/*font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;*/
 }
+
 #mainContent{
 	padding:50px;
 	flex:2;
-	background-color: #3498db;
+	/*background-color: #3498db;*/
+	/*background-color: #6f392f;*/
+	background-color: rgb(36,51,63);
 	max-width: 400px;
 	
-}
-
-#mainContent form{
 }
 
 #mainContent form *{
@@ -58,9 +58,10 @@
 aside{
 	padding:50px;
 	flex:1;
-	/*margin-top: 50px;*/
+	margin-top: 50px;
 	margin-bottom: 50px;
-	background-color: #3d4a51;
+	/*background-color: rgb(36,51,63);*/
+	background-color: #6f392f;
 }
 
 aside h2{
@@ -70,7 +71,8 @@ aside h2{
 
 aside a:link, aside a:visited{
 	text-decoration: none;
-	background-color: #3498db;
+	/*background-color: #3498db;*/
+	background-color: #AAAAAA;
 	color: white;
 	padding: 10px;
 	box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);

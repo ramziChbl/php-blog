@@ -25,17 +25,17 @@
 				alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
 				return null;
 			}
-			
 			return xhr;
 		}
 
-		function sendxhr(postId, userId,vote)
+		function sendxhr(button, postId, userId,vote)
 		{
 			var xhr = getXMLHttpRequest();
 			xhr.onreadystatechange = function()
 			{
 	        	if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
 	                alert("Done"); // Données textuelles récupérées
+	                changeColor(button, vote);
 	            }
 	        }
 	        var dir = 1;
@@ -47,56 +47,51 @@
 			xhr.open("GET", "voteTarget.php?postId="+ postId +"&userId="+ userId +"&dir=" + vote, true);
 			xhr.send();
 			//if POST ====> xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		}
+
+		function changeColor(button, vote)
+		{
+			//button.style.color = "white";
+
+			if(vote > 0)
+			{
+				//button.style.background="green";
+				//button.svg.path.setAttribute("fill", "#10EE10");
+				//button.firstChild().firstChild().setAttribute("fill", "#10EE10");
+				//button.childNodes[0].childNodes[0].setAttribute("fill", "#10EE10");
+				alert(button.childNodes[0].childNodes[0]);
+			}
+			else
+			{
+				//button.style.background="red";
+				//button.svg.path.setAttribute("fill", "#EE1010");
+				//button.firstChild().firstChild().setAttribute("fill", "#EE1010");
+				//button.childNodes[0].childNodes[0].setAttribute("fill", "#EE1010");
+				alert(button);
+			}
 
 		}
 
 		function vote(button, postId, userId,vote)
 		{					
-			sendxhr(postId, userId,vote);
-			if(vote > 0)
-			{
-				button.style.background="green";
-				button.style.color = "white";
-			}
-			else
-			{
-				button.style.background="red";
-				button.style.color = "white";
-			}
+			sendxhr(button, postId, userId,vote);
 		}
 	</script>
 
 </head>
 <body>
 	<div id="container">
-		<header>
-			<h1>Blog.</h1>
-			<div id="userSpace">
-				<ul>
-				<?php
-					if($currentUserController->logged())
-					{
-						echo '<li class="first_link"><a href="#">'.($currentUserController->loggedUser())->pseudo() .'</a></li>';
-						echo '<li class="second_link"><a class="userSpaceLink" href="?action=addPost">Write Post</a></li>';
-						echo '<li class="second_link"><a class="userSpaceLink" href="?action=logout">Logout</a></li>';
-						
-					}
-					else
-					{
-						echo '<li><a class="first_link" href="?action=login">Login</a></li>';
-						echo '<li><a class="second_link" href="?action=register">Create an account</a></li>';
-					}
-				?>
-				<ul>
-			</div>
-		</header>
+		<?php include("view/pageHeader.php");?>
 
 		<main id="content">
+			<div id="imgContainer">
+				<img src="public/image.jpg">
+			</div>
 		<?php
 			$showCommentButton = true;
 			foreach ($billets as $billet)
 			{
-				include("billet.php");
+				include("view/billet.php");
 			}
 		 ?>
 		 </main>
@@ -113,7 +108,7 @@
 						echo '<li><a href="?page='.$i.'">'.$i.'</a></li>';
 					}
 
-					echo '<li><a href="#" class="currentPage">'.$currentPage.'</a></li>';
+					echo '<li><a href="#" id="currentPage">'.$currentPage.'</a></li>';
 
 					for ($i=$currentPage + 1; $i <= $nbPages; $i++)
 					{ 
@@ -132,7 +127,7 @@
 						{
 							echo '<li><a href="?page='.$i.'">'.$i.'</a></li>';
 						}
-						echo '<li><a href="#" class="currentPage">'.$currentPage.'</a></li>';
+						echo '<li><a href="#" id="currentPage">'.$currentPage.'</a></li>';
 						for ($i=$currentPage + 1; $i <= $nbCases - 2; $i++)
 						{ 
 							echo '<li><a href="?page='.$i.'">'.$i.'</a></li>';
@@ -148,7 +143,7 @@
 						for($i=$nbPages - 7; $i <= $nbPages; $i++)
 						{ 
 							if($i == $currentPage)
-								echo '<li><a href="#" class="currentPage">'.$currentPage.'</a></li>';
+								echo '<li><a href="#" id="currentPage">'.$currentPage.'</a></li>';
 							else
 								echo '<li><a href="?page='.$i.'">'.$i.'</a></li>';
 						}

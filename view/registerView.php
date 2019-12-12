@@ -3,12 +3,15 @@
 <head>
 	<title>Registation</title>
 	<link rel="stylesheet" type="text/css" href="public/style_members_signing.css">
+	<link rel="stylesheet" type="text/css" href="public/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<div id="container">
+		<?php include("view/pageHeader.php");?>
+		<div id="underHeader"></div>
 		<a id="lien_retour" href="?action=list">Home</a>
-		<div id="content">
+		<div id="Usercontent">
 			<section id="mainContent">
 				<h1>Register</h1>
 				<form method="post" action="?action=register">

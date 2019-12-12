@@ -1,0 +1,3 @@
+# Remove the question mark from the request but maintain the query string
+RewriteEngine on
+RewriteRule ^(index)$ $1.php [NC,L]

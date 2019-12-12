@@ -3,6 +3,14 @@
 	require "lib/autoload.php";
 	require "controller/controller.php";
 	//require("controller/membersController.php");
+	//phpinfo();
+	/*echo($_SERVER["QUERY_STRING"]);
+	print_r(apache_get_modules());
+
+	if(!empty($_SERVER["QUERY_STRING"]))
+	{
+
+	}*/
 
 	if(!isset($_GET["action"]))
 		showListPosts();

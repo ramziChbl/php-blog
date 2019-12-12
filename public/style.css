@@ -19,7 +19,10 @@ body{
 }
 
 #container>header{
-	background-color: #337ab7;
+	position: fixed;
+	width: 100%;
+	background-color: rgba(36,51,63,0.9);
+	
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -27,38 +30,45 @@ body{
 	color: white;
 }
 
-#container>header>h1{
-	padding: 20px;
-	padding-left: 10%;
-	font-size: 3em;
-	flex:1;
+#underHeader{
+	padding: 52px;
 }
 
-#userSpace{
+#container>header>h1{
 	padding: 20px;
-	font-size: 20px;
-	flex:1;
+	font-size: 3em;
+	/*flex:3;*/
+}
+
+#container>header>h1>a{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+
+#userSpace{
+	display: flex;
+	font-size: 1em;
+	/*flex:1;*/
+	padding: 8px;
 }
 
 #userSpace ul{
-	/*height: 100%;*/
 	list-style: none;
 	display: flex;
-	/*align-items: flex-end;*/
 	align-items: center;
 	flex-wrap: wrap;
 }
 
 #userSpace li{
-	padding: 4px;
+	/*padding: 4px;*/
+	margin: 0 5px;
 }
 
 #userSpace a:link, #userSpace a:visited{
 	text-decoration: none;
 	color: white;
 	text-transform: uppercase;
-	margin: 0 5px;
-	padding: 6px;
 }
 
 #userSpace a:hover{
@@ -68,28 +78,26 @@ body{
 
 
 main{
-	/*width: 86%;
-	min-width: 600px;
-	margin: auto;*/
+	/*padding-top: 95px;*/
 	min-width: 320px;
-	/*background-color: #FFFFFF;*/
 }
 
 .billet{
 	margin: 20px 0px 20px 0px;
+	margin: 20px;
 	padding: 10px;
-	border : 1px solid rgb(224, 224, 224);
+	border : 1px solid rgba(36,51,63, 0.4);
 	border-radius: 4px;
 	background-color: #FFFFFF;
 	color: #2c4250;
 }
 
 .billet>header{
-	/*border:solid;
-	background-color: #BBBBBB;*/
-	/*padding: 20px;*/
 	padding: 20px 20px 0px 20px;
-
+}
+.postTitle{
+	text-decoration: none;
+	color: #2c4250;
 }
 
 .billet>header>h1{
@@ -129,25 +137,24 @@ main{
 	text-transform: uppercase;
 	font-weight: bold;
 	/*color: #337ab7;*/
+	background-color: white;
 	color: #bbbbbb;
 	box-sizing: border-box;
-	padding: 8px;
+	padding: 4px;
 	display: block;
 	border:none;
 	font-size: 14px;
 	cursor: pointer;
+}
+
+.billet footer a{
 
 }
 
 #pages_navigation{
-	
-	/*background-color: rgb(249, 249, 249);*/
-	/*text-transform: uppercase;
-	/*font-family: cursive;*/
 	color: white;
 	text-align: center;
 	margin-bottom: 20px;
-	/*border-radius: 5px;*/
 }
 
 #pages_navigation ul{
@@ -160,7 +167,6 @@ main{
 	background-color: #FFF;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
-	color: #666;
 	/*width: 50%;
 	margin: 0 auto;*/
 }
@@ -168,53 +174,75 @@ main{
 #pages_navigation ul li{
 	/*padding: 8px;*/
 	width: 40px;
+	height: 40px;
 	padding: 0px;
 	border-top:solid;
-	border-color: #2e6da4;
+	border-color: #A85148/*#2e6da4*/;
+	color: #2c4250;
 }
-
+/*
 #pages_navigation a:link, #pages_navigation a:visited{
 	display: block;
 	width: 100%;
 	height: 100%;
 	text-decoration: none;
 	padding: 8px;
+	color:#000000;
+}*/
+
+#pages_navigation a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	padding: 8px;
+	/*color:#000000;*/
+	/*color: rgb(36,51,63);*/
+	color: #2c4250;
 }
 
-.currentPage:link, .currentPage:visited{
-	/*text-decoration: none;*/
+/*.currentPage:link, .currentPage:visited{
 	background-color: #337ab7;
 	color: #FFF;
+}*/
+
+#currentPage{
+	text-decoration: none;
+	background-color: #A85148; /*#8E97A6;*/
+	color: #FFFFFF !important;
+	border-radius: 50%;
 }
 
 
 /*================== COMMENTS ===================*/
+
 #lien_retour{
-	margin: 20px;
+	/*margin: 20px;
 	margin-top: 50px;
+	top: 50px;*/
 	padding: 10px;
 	text-decoration: none;
 	font-size: 1.5em;
 	color: white;
 	background-color: #302F33;
+	margin: 100px 20px;
 }
 
 #commentSection{
-	
-	/*padding: 20px;*/
-	/*padding: 20px 0px 20px 0px;*/
-	width: 80%;
+	width: 94%;
 	margin: auto;
-	margin: 20px 0px 20px 0px;
+	/*margin: 20px 0px 20px 0px;*/
+	margin-bottom: 20px;
 }
 
 
 #addComment{
-	min-width: 300px;
+	/*min-width: 300px;*/
 	color: white;
-	padding: 20px;
+	padding: 10px;
 	border-radius: 2px;
-	background-color: #337ab7;
+	background-color: #A85148;
+	background-color: #818485;
 }
 
 #addComment p a{
@@ -227,7 +255,10 @@ main{
 	display: block;
 	margin: 5px 0;
 	padding: 5px;
-	width: 100%;
+	width: 95%;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	/*max-width: 90%;*/
 	/*resize:none;*/
 	resize: vertical;
@@ -242,7 +273,8 @@ main{
 	text-transform: uppercase;
 	cursor: pointer;
 	font-weight: bold;
-	background-color: #0B3249;
+	/*background-color: #0B3249;*/
+	background-color: /*#24333f*/ #A85148;
 	color: #FFFFFF;
 	box-sizing: border-box;
 	border:none;
@@ -256,7 +288,8 @@ main{
 	margin : 2px 0px 0px 2px;
 	padding: 10px;
 	border-radius: 2px;
-	background-color: #333333;
+	/*background-color: #333333;*/
+	background-color: rgb(36,51,63);
 	color: white;
 }
 

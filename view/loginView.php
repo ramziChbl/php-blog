@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Connection</title>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="public/style.css">
 	<link rel="stylesheet" type="text/css" href="public/style_members_signing.css">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<div id="container">
+		<?php include("view/pageHeader.php");?>
+		<div id="underHeader"></div>
 		<a id="lien_retour" href="?action=list">Home</a>
-		<div id="content">
-			
+		<main id="Usercontent">	
 			<section id="mainContent">
 				<h1>Login</h1>
 				<form method="post" action="?action=login">
@@ -23,7 +26,7 @@
 				<h2>New member?</h2>
 				<a href="?action=register">Register</a>
 			</aside>
-		</div>
+		</main> 
 	</div>
 </body>
 </html>
